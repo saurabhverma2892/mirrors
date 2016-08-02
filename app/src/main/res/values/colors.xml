@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <!-- Screens background color-->
+    <color name="bg_screen">#163239</color>
+    <color name="color_navigation_list_background_new">#122023</color>
+
+    <!-- Light Blue Button Color-->
+    <color name="btn_color_blue">#639dcb</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#1e6373</color>
+    <color name="dot_dark_screen2">#1e6373</color>
+    <color name="dot_dark_screen3">#1e6373</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#d4f7ff</color>
+    <color name="dot_light_screen2">#d4f7ff</color>
+    <color name="dot_light_screen3">#d4f7ff</color>
+    <color name="placeholder_color">#558b97</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+    </array>
+
+
+</resources>
