@@ -2,8 +2,12 @@ package com.example.saurabh.mirrors;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,11 +23,30 @@ public class ChooseGender extends AppCompatActivity {
     private RelativeLayout genderRelativeLayoutForButtons;
     private String genderSelected;
     private PreferencesManager prefManager;
+    private android.support.v7.app.ActionBar actionbar;
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_gender);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.appThemeToolbar);
+        setSupportActionBar(myToolbar);
+        actionbar = getSupportActionBar();
+        actionbar.setTitle("Choose Gender");
+        actionbar.setDisplayHomeAsUpEnabled(true);
 
         genderSelected = "M";
         prefManager = new PreferencesManager(this);
@@ -69,7 +92,7 @@ public class ChooseGender extends AppCompatActivity {
         continueToMainButton.setBackgroundResource(R.drawable.continue_button_f);
         femaleButton.setBackgroundResource(R.drawable.female_button_f);
         genderImageView.setImageResource(R.drawable.female_pic);
-
+        actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#702e2f")));
         genderSelected = "F";
     }
 
@@ -80,7 +103,7 @@ public class ChooseGender extends AppCompatActivity {
         continueToMainButton.setBackgroundResource(R.drawable.rounded_button);
         femaleButton.setBackgroundResource(R.drawable.female_button);
         genderImageView.setImageResource(R.drawable.male_pic);
-
+        actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#1e6373")));
         genderSelected = "M";
     }
 

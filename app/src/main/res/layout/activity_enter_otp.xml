@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.saurabh.mirrors.EnterPhoneNumber"
     android:focusable="false"
     android:background="@drawable/bg_screen_gradient"
     android:gravity="center_horizontal">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/phoneNumberToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
     <EditText
         android:layout_width="300dp"
@@ -45,21 +56,22 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:id="@+id/phoneNumberTextView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
         android:background="@drawable/input_line"
         android:textColor="#558b97"
         android:textSize="20dp"
-        android:paddingTop="5dp" />
+        android:paddingTop="5dp"
+        android:layout_below="@+id/phoneNumberToolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send Again"
         android:id="@+id/sendAgainOtpButton"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/placeholder_color" />
+        android:textColor="@color/placeholder_color"
+        android:layout_below="@+id/otpVerifyButton"
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>

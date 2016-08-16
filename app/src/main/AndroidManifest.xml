@@ -41,7 +41,9 @@
         <activity
             android:name=".MainPage"
             android:label="@string/title_activity_main_page"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".OutletPage" />
+        <activity android:name=".tabs.PlacesTab.SalonPage"></activity>
     </application>
 
 </manifest>

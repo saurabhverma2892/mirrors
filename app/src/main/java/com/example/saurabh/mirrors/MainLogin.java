@@ -34,6 +34,5 @@ public class MainLogin extends AppCompatActivity{
     private void launchNumberLogin() {
         Intent i = new Intent(MainLogin.this, EnterPhoneNumber.class);
         startActivity(i);
-        finish();
     }
 }

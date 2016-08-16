@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,9 +29,27 @@ public class EnterOTP extends AppCompatActivity {
     private String phoneNumber;
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_otp);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.phoneNumberToolbar);
+        setSupportActionBar(myToolbar);
+        android.support.v7.app.ActionBar actionbar = getSupportActionBar();
+        actionbar.setTitle("Login");
+        actionbar.setDisplayHomeAsUpEnabled(true);
 
         prefManager = new PreferencesManager(this);
         phoneNumberTextView = (TextView) findViewById(R.id.phoneNumberTextView);

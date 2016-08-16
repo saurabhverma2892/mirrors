@@ -3,8 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.saurabh.mirrors.ChooseGender"
     android:background="@drawable/bg_screen_gradient">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/appThemeToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -60,21 +69,20 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/genderRelativeLayoutForButtons"
         android:background="@drawable/gender_male_bg"
-        android:id="@+id/genderRelativeLayoutMain">
+        android:id="@+id/genderRelativeLayoutMain"
+        android:layout_below="@+id/appThemeToolbar">
         <ImageView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/genderImageView"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="100dp"
             android:src="@drawable/male_pic"
-            android:layout_centerHorizontal="true"
-            android:adjustViewBounds="true" />
+            android:adjustViewBounds="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
 </RelativeLayout>
